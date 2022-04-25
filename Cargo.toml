@@ -3,5 +3,4 @@
 members = [
     "libyuv-rs",
     "nv21",
-    "nv12"
 ]

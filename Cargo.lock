@@ -7,9 +7,8 @@ name = "libyuv-rs"
 version = "0.1.0"
 
 [[package]]
-name = "nv12"
-version = "0.1.0"
-
-[[package]]
 name = "nv21"
 version = "0.1.0"
+dependencies = [
+ "libyuv-rs",
+]
