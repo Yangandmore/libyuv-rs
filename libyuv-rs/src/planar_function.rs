@@ -14,10 +14,53 @@ pub fn copy_plane(
 /// 宽度和高度是平面尺寸（通常是半像素宽度）。
 pub fn split_uv_plane(
     src_uv: &[u8],
-    dst_u: &mut [u8],
-    dst_v: &mut [u8],
-    width: i32,
-    height: i32,
+    dst_uv: &mut [u8],
+    width: usize,
+    height: usize
 ) {
-    
+    let mut src_index = 0;
+    let mut dst_index = 0;
+    let count = width * height;
+    let helf_count = count >> 1;
+    loop {
+        if dst_index >= helf_count {
+            break;
+        }
+
+        // U
+        dst_uv[dst_index] = src_uv[src_index];
+        // V
+        dst_uv[dst_index + helf_count] = src_uv[src_index + 1];
+
+        src_index += 2;
+        dst_index += 1;
+    };
+}
+
+/// 支持NV21等VU通道功能。
+/// 宽度和高度是平面尺寸（通常是半像素宽度）。
+pub fn split_vu_plane(
+    src_vu: &[u8],
+    dst_uv: &mut [u8],
+    width: usize,
+    height: usize
+) {
+    let mut src_index = 0;
+    let mut dst_index = 0;
+    let count = width * height;
+    let helf_count = count >> 1;
+
+    loop {
+        if dst_index >= helf_count {
+            break;
+        }
+        
+        // U
+        dst_uv[dst_index] = src_vu[src_index + 1];
+        // V
+        dst_uv[dst_index + helf_count] = src_vu[src_index];
+
+        src_index += 2;
+        dst_index += 1;
+    };
 }
