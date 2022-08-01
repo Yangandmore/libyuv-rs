@@ -12,4 +12,3 @@ description = "---"
 categories = ["multimedia::encoding"]
 keywords = ["yuv", "rgba", "rgb"]
 
-[dependencies]
