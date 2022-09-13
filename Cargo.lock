@@ -3,5 +3,17 @@
 version = 3
 
 [[package]]
+name = "aarch64"
+version = "0.1.0"
+
+[[package]]
+name = "arm"
+version = "0.1.0"
+
+[[package]]
 name = "libyuv-rs"
+version = "0.1.0"
+
+[[package]]
+name = "x86"
 version = "0.1.0"

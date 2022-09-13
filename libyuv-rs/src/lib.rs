@@ -2,3 +2,4 @@ pub mod planar_function;
 pub mod row_common;
 pub mod convert;
 pub mod row_gcc;
+pub mod row_neon;

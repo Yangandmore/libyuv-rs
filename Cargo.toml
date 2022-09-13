@@ -2,4 +2,7 @@
 
 members = [
     "libyuv-rs",
+    "x86",
+    "aarch64",
+    "arm",
 ]
